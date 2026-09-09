@@ -4,27 +4,28 @@ frontend-app-notifications
 |license-badge| |status-badge| |ci-badge| |codecov-badge|
 
 .. |license-badge| image:: https://img.shields.io/badge/license-AGPL-informational
-    :target: https://github.com/openedx/frontend-app-notifications/blob/main/LICENSE
+    :target: https://github.com/edx/frontend-app-notifications/blob/main/LICENSE
     :alt: License
 
 .. |status-badge| image:: https://img.shields.io/badge/Status-Maintained-brightgreen
 
-.. |ci-badge| image:: https://github.com/openedx/frontend-app-notifications/actions/workflows/ci.yml/badge.svg
-    :target: https://github.com/openedx/frontend-app-notifications/actions/workflows/ci.yml
+.. |ci-badge| image:: https://github.com/edx/frontend-app-notifications/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/edx/frontend-app-notifications/actions/workflows/ci.yml
     :alt: Continuous Integration
 
-.. |codecov-badge| image:: https://codecov.io/github/openedx/frontend-app-notifications/coverage.svg?branch=main
-    :target: https://codecov.io/github/openedx/frontend-app-notifications?branch=main
+.. |codecov-badge| image:: https://codecov.io/github/edx/frontend-app-notifications/coverage.svg?branch=main
+    :target: https://codecov.io/github/edx/frontend-app-notifications?branch=main
     :alt: Codecov
 
 Purpose
 =======
 
-This repository hosts ``@openedx/frontend-app-notifications``, the Open edX
-notifications frontend app. It is consumed by sites built on
+This repository is edX's fork of `openedx/frontend-app-notifications`_, published
+to npm as ``@edx/frontend-app-notifications``. It is consumed by sites built on
 `@openedx/frontend-base`_ and contributes a notifications bell widget to the
 unified header's desktop and mobile right slots.
 
+.. _openedx/frontend-app-notifications: https://github.com/openedx/frontend-app-notifications
 .. _@openedx/frontend-base: https://github.com/openedx/frontend-base
 
 Getting Started
@@ -35,12 +36,12 @@ Installation
 
 Install the package into a site that uses ``@openedx/frontend-base``::
 
-    npm install @openedx/frontend-app-notifications
+    npm install @edx/frontend-app-notifications
 
 Then register the app's default export alongside the other ``App`` configs in
 your ``site.config.*.tsx``::
 
-    import notificationsApp from '@openedx/frontend-app-notifications';
+    import notificationsApp from '@edx/frontend-app-notifications';
     import { shellApp, headerApp, footerApp } from '@openedx/frontend-base';
 
     const config: SiteConfig = {
