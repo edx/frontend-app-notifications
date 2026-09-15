@@ -3,9 +3,7 @@ on:
   push:
     branches:
       - main
-      - stable
-      - '[0-9]+.x'
-      - '[0-9]+.[0-9]+.x'
+      - release
 
 permissions:
   contents: read # for checkout
@@ -17,7 +15,6 @@ jobs:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for trusted publishing and npm provenance
     steps:
     - name: Checkout
       uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
@@ -37,7 +34,8 @@ jobs:
       run: npm run test
     - name: Build
       run: npm run build
-    - name: Release
+    - name: Release to npm/GitHub
       env:
-        GITHUB_TOKEN: ${{ secrets.OPENEDX_SEMANTIC_RELEASE_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
       run: npx semantic-release@25
