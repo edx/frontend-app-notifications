@@ -1,6 +1,6 @@
 {
   "branches": [
-    { "name": "release", "channel": "latest" },
+    { "name": "stable", "channel": "latest" },
     { "name": "main", "prerelease": "alpha", "channel": "alpha" }
   ],
   "tagFormat": "v${version}",
